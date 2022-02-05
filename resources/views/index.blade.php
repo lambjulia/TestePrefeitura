@@ -9,6 +9,11 @@
 </head>
 <body>
 
-<tr>
-<td><a href="{{route('pessoas.create', $pessoa->id)}}"></a></td>
-</tr>
+    
+
+<a href="{{url('cadastro')}}">a</a>
+
+
+</body>
+
+</html>

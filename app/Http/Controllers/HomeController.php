@@ -10,10 +10,10 @@ class HomeController extends Controller {
 
     public function index()
     {
-        return "Cadastro prefeitura";
+        return view('index');
     }
 
-  
+   
 
 
 }
