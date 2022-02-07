@@ -7,13 +7,48 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Cadastro prefeitura</title>
 </head>
-<body>
 
+<div class ="container">
+    <h1> Listagem de Pessoas</h1>    
+
+<a href="{{url('cadastro')}}">Cadastrar Nova Pessoa</a>
+
+<table class ="table table-condensed">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Nome</td>
+            <td>CPF</td>
+            
+        </tr>    
+    </thead>
     
+    <tbody>
+        @foreach($pessoa as $pessoa)
+        <tr>
+            <td>{{ $pessoa-> id }}</td>
+            <td><a href="{{ route('show', $pessoa->id) }}"> {{ $pessoa->nome }} </a></td>
+            <td>{{ $pessoa-> cpf }} </td>
+            <td>
+                <a href="{{ route('edit', $pessoa->id) }}" class="btn btn-warning">Editar</a>
+                <form action="/delete/{{ $pessoa->id }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit"  class="btn btn-danger"><i class='fa fa-trash'></i> Delete</a></button>
 
-<a href="{{url('cadastro')}}">a</a>
+                </form>
+            </td>
+        </tr>
+        @endforeach
+    </tbody>
+</table>
+</div>
+
+<script src="{{asset('js/validation/validation-pessoas/validation-pessoas-create.js')}}"></script>
+<script src="{{asset('js/messages_pt_BR.js')}}"></script>
+<script src='jquery.min.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 
-</body>
 
 </html>

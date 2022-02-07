@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use View;
 use Illuminate\Http\Request;
+use App\Http\Requests\SeriesFormRequest; 
 
 use App\Pessoa;
 
@@ -13,7 +14,16 @@ class PessoasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function cadastro()
+
+
+         public function index()
+        {
+            $pessoa = \App\Pessoa::all();
+            return view('index', ['pessoa' => $pessoa]);
+        }
+
+    
+     public function cadastro()
     {
         return view('welcome');
     }
@@ -54,7 +64,7 @@ class PessoasController extends Controller
         
             $pessoa->save();
 
-            return redirect()->back();
+            return redirect('/index');
     }
 
     public function show ($id) 
@@ -74,11 +84,37 @@ class PessoasController extends Controller
 
     public function update(Request $request, $id)
     {
-        dd($request);
-        Pessoa::find($id)->update($request->all());
+        
+      $pessoa = Pessoa::findOrFail($id);
+      $pessoa->update([
+          'nome' => $request -> nome,
+          'data_de_nascimento' => $request -> data_de_nascimento,
+          'cpf' => $request -> cpf,
+          'sexo' => $request -> sexo,
+          'cidade' => $request -> cidade,
+          'bairro' => $request -> bairro,
+          'rua' => $request -> rua,
+          'numero' => $request -> numero,
+          'complemento' => $request -> complemento,
 
+      ]);
+        
+
+        return redirect('/index');
+      
+        
     }
 
+    public function delete($id)
+    {
+        $pessoa = Pessoa::find($id);
+        $pessoa->delete();
+        return redirect('/index');
+    }
+
+  
+
+ 
 
 
 
@@ -115,8 +151,5 @@ class PessoasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
-    }
+
 }

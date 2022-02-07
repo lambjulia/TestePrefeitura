@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/index', 'PessoasController@index')->name('home');
 
 Route::get('/cadastro', 'PessoasController@cadastro')->name('cadastro');
 
@@ -19,6 +19,21 @@ Route::post('/save', 'PessoasController@store')->name('store');
 
 Route::get('/cadastro/ver/{id}', 'PessoasController@show')->name('show');
 
-Route::get('/cadastro/editar/{id}', 'PessoasController@edit');
+Route::get('/cadastro/edit/{id}', 'PessoasController@edit')->name('edit');
 
-Route::put('/cadastro/editar/{id}', 'PessoasController@update')->name('alterar_cadastro');
+Route::post('/cadastro/{id}', 'PessoasController@update')->name('alterar_cadastro');
+
+Route::delete('/delete/{id}',  'PessoasController@delete');
+
+
+Route::get('/cadastroprot', 'ProtocoloController@create')->name('cadastro_protocolo');
+
+Route::post('/saveprot', 'ProtocoloController@store')->name('store_protocolo');
+
+Route::get('/cadastroprot/ver/{id}', 'ProtocoloController@show')->name('show_protocolo');
+
+Route::get('/cadastroprot/edit/{id}', 'ProtocoloController@edit')->name('edit_protocolo');
+
+Route::post('/cadastroprot/{id}', 'ProtocoloController@update')->name('alterar_protocolo');
+
+Route::delete('/deleteprot/{id}',  'ProtocoloController@delete');

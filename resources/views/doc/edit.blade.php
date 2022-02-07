@@ -8,13 +8,13 @@
     <title>Cadastro prefeitura</title>
 </head>
 <body>
-    <form action="{{ route('alterar_cadastro', $pessoa->id) }}" method="PUT">
-        @csrf
+    <form action="{{ route('alterar_cadastro', $pessoa->id) }}" method="POST">
+        {{csrf_field()}}
     
         <label for="">Nome:</label> <br>
         <input type="text" name="nome" value =" {{ $pessoa->nome }}"><br>
         <label for="">Data de nascimento:</label><br>
-        <input type="date" name="data_de_nascimento"  value =" {{ $pessoa->data_de_nascimento }}"><br>
+        <input type="text" name="data_de_nascimento"  value =" {{ $pessoa->data_de_nascimento }}"><br>
         <label for="">CPF:</label><br>
         <input type="text" name="cpf"  value =" {{ $pessoa->cpf }}"><br>
         <label for="">Sexo:</label><br>
