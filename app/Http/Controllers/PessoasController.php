@@ -16,13 +16,16 @@ class PessoasController extends Controller
      */
 
 
-         public function index()
-        {
-            $pessoa = \App\Pessoa::all();
-            return view('index', ['pessoa' => $pessoa]);
-        }
+    public function index()
+    {
+        $pessoa = \App\Pessoa::all(); 
+        $protocolo = \App\Protocolo::all();
+        return view('index', compact('pessoa', $pessoa, 'protocolo', $protocolo));
+    }
 
-    
+      
+
+
      public function cadastro()
     {
         return view('welcome');

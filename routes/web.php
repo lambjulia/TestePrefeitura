@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/index', 'PessoasController@index')->name('home');
+Route::get('/index', 'PessoasController@index')->name('pessoas');
 
 Route::get('/cadastro', 'PessoasController@cadastro')->name('cadastro');
 
@@ -30,10 +30,18 @@ Route::get('/cadastroprot', 'ProtocoloController@create')->name('cadastro_protoc
 
 Route::post('/saveprot', 'ProtocoloController@store')->name('store_protocolo');
 
-Route::get('/cadastroprot/ver/{id}', 'ProtocoloController@show')->name('show_protocolo');
+Route::get('/cadastroprot/ver/{numeroprot}', 'ProtocoloController@show')->name('showprot');
 
-Route::get('/cadastroprot/edit/{id}', 'ProtocoloController@edit')->name('edit_protocolo');
+Route::get('/cadastroprot/edit/{numeroprot}', 'ProtocoloController@edit')->name('editprot');
 
-Route::post('/cadastroprot/{id}', 'ProtocoloController@update')->name('alterar_protocolo');
+Route::post('/cadastroprot/{numeroprot}', 'ProtocoloController@update')->name('alterar_protocolo');
 
-Route::delete('/deleteprot/{id}',  'ProtocoloController@delete');
+Route::delete('/deleteprot/{numeroprot}',  'ProtocoloController@delete');
+
+Route::get('/lista', 'ProtocoloController@index')->name('protocolo');
+
+Route::get('/home', function () {
+    return view ('prot/home');
+} );
+
+Route::get("/", 'LoginController@login');

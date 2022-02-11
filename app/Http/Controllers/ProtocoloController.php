@@ -16,6 +16,12 @@ class ProtocoloController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+    public function index()
+        {
+        $pessoa = Pessoa::all();  
+        $protocolo = Protocolo::all();
+        return view('prot/lista', compact('pessoa', $pessoa, 'protocolo', $protocolo));
+        }
 
         
 
@@ -62,26 +68,31 @@ class ProtocoloController extends Controller
             return redirect('/index');
     }
 
-    public function show ($id) 
+    public function show ($numeroprot) 
     {
-        $protocolo = Protocolo::find($id);
-        return view ('doc/show', ['protocolo' => $protocolo]);
+        $protocolo = Protocolo::find($numeroprot);
+        return view ('prot/showprot', ['protocolo' => $protocolo]);
     }
 
 
 
-    public function edit($id) 
+    public function edit($numeroprot) 
     {
-        $protocolo = protocolo::find($id);
-        return view('doc/edit', ['protocolo' => $protocolo]);
+        $protocolo = Protocolo::find($numeroprot);
+        $pessoa='pessoa';
+        
+        return view ('prot/editprot', compact('pessoa', 'protocolo'));
+        
     }
 
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $numeroprot)
     {
         
-      $protocolo = protocolo::findOrFail($id);
-      $protocolo->update([
+      $protocolo = Protocolo::findOrFail($numeroprot);
+      $pessoa = Pessoa::find($id);
+        $protocolo->update([
+          'contribuinte' => $request -> contribuinte,
           'descricao' => $request -> descricao,
           'data' => $request -> prazo,
           'prazo' => $request -> prazo,
@@ -95,9 +106,9 @@ class ProtocoloController extends Controller
         
     }
 
-    public function delete($id)
+    public function delete($numeroprot)
     {
-        $protocolo = protocolo::find($id);
+        $protocolo = protocolo::find($numeroprot);
         $protocolo->delete();
         return redirect('/index');
     }

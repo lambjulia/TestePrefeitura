@@ -14,7 +14,7 @@ class CreateProtocolosTable extends Migration
     public function up()
     {
         Schema::create('protocolos', function (Blueprint $table) {
-            $table->increments('id'); 
+            $table->increments('numeroprot')->nullable();  
             $table->string('contribuinte')->nullable(); 
             $table->string('descricao')->nullable();
             $table->string('data')->nullable();
