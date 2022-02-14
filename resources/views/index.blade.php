@@ -21,11 +21,11 @@
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
-                <li><a href="http://127.0.0.1:8000/home">Inicio</a></li>
-                <li><a href="http://127.0.0.1:8000/cadastrop">Cadastrar nova Pessoa</a></li>
-                <li><a href="http://127.0.0.1:8000/cadastroprot">Cadastrar novo Protocolo</a></li>
-                <li><a href="http://127.0.0.1:8000/index">Pessoas Cadastradas</a></li>
-                <li><a href="http://127.0.0.1:8000/lista">Protocolos Cadastrados</a></li>
+                <li><a href="{{url('home')}}">Inicio</a></li>
+                <li><a href="{{url('cadastrop')}}">Cadastrar nova Pessoa</a></li>
+                <li><a href="{{url('cadastroprot')}}">Cadastrar novo Protocolo</a></li>
+                <li><a href="{{url('index')}}">Pessoas Cadastradas</a></li>
+                <li><a href="{{url('lista')}}">Protocolos Cadastrados</a></li>
             </ul>
         </nav>
     </header>      
@@ -62,22 +62,23 @@
             <td>{{ $pessoa->id }}</td>
             <td>{{ $pessoa->nome }}</td>
             <td>{{ $pessoa->cpf }} </td>
+
+
             <td>
-              
-                    
-               <a href="{{ route('show', $pessoa->id) }}" class="btn btn-primary" style="float: right">Ver</a>
-            
-                <div>
-                
-                <a href="{{ route('edit', $pessoa->id) }}" class="btn btn-success"  style="float:right">Editar</a>
-                </div>
+               <a href="{{ route('show', $pessoa->id) }}" class="btn btn-primary" >Ver</a>
+            </td>
+
+            <td>
+                <a href="{{ route('edit', $pessoa->id) }}" class="btn btn-success" >Editar</a>
+            </td>
+            <td>
                 <form action="/delete/{{ $pessoa->id }}" method="POST">
-                    @csrf 
+                    @csrf
                     @method('DELETE')
-                    <button type="submit"  class="btn btn-danger" style="float:right"><i class='fa fa-trash'></i>Delete</a></button>
-                </div>
+                    <button type="submit"  class="btn btn-danger" ><i class='fa fa-trash'></i>Delete</a></button>
                 </form>
             </td>
+
         </tr>
         @endforeach
     </tbody>

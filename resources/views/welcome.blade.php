@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"
+    integrity="sha256-Kg2zTcFO9LXOc7IwcBx1YeUBJmekycsnTsq2RuFHSZU=" crossorigin="anonymous"></script>
     
     <title>Cadastrar Pessoa</title>
 </head>
@@ -20,11 +24,11 @@
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
-                <li><a href="http://127.0.0.1:8000/home">Inicio</a></li>
-                <li><a href="http://127.0.0.1:8000/cadastrop">Cadastrar nova Pessoa</a></li>
-                <li><a href="http://127.0.0.1:8000/cadastroprot">Cadastrar novo Protocolo</a></li>
-                <li><a href="http://127.0.0.1:8000/index">Pessoas Cadastradas</a></li>
-                <li><a href="http://127.0.0.1:8000/lista">Protocolos Cadastrados</a></li>
+                <li><a href="{{url('home')}}">Inicio</a></li> 
+                <li><a href="{{url('cadastrop')}}">Cadastrar nova Pessoa</a></li>
+                <li><a href="{{url('cadastroprot')}}">Cadastrar novo Protocolo</a></li>
+                <li><a href="{{url('index')}}">Pessoas Cadastradas</a></li>
+                <li><a href="{{url('lista')}}">Protocolos Cadastrados</a></li>
             </ul>
         </nav>
     </header>      
@@ -46,18 +50,18 @@
     <input type="text" name="cpf" id="cpf" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" placeholder="CPF" required><br>
 
     <div style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless">
-    <input type="radio" name="sexo" value="masculino" id="masculino" checked>
+    <input type="radio" name="sexo" required="required" value="masculino" id="masculino">
     <label style="font-size:large" for="masculino">Masculino</label>
-    <input type="radio" name="sexo"  value="feminino" id="feminino">
+    <input type="radio" name="sexo" required="required" value="feminino" id="feminino">
     <label style="font-size: large" for="feminino">Feminino</label>
     </div>
     <br>
 
-    <input type="text" name="cidade" id="cidade" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" placeholder="Cidade" required><br>
-    <input type="text" name="bairro" id="bairro" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" placeholder="Bairro" required><br>
-    <input type="text" name="rua" id="rua" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" placeholder="Rua" required><br>
-    <input type="text" name="numero" id="numero" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" placeholder="Número" required><br>
-    <input type="text" name="complemento" id="complemento" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" placeholder="Complemento" required><br>
+    <input type="text" name="cidade" id="cidade" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" placeholder="Cidade"><br>
+    <input type="text" name="bairro" id="bairro" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" placeholder="Bairro"><br>
+    <input type="text" name="rua" id="rua" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" placeholder="Rua"><br>
+    <input type="text" name="numero" id="numero" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" placeholder="Número" ><br>
+    <input type="text" name="complemento" id="complemento" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" placeholder="Complemento"><br>
     
     
    
@@ -69,6 +73,13 @@
 </div>
 </form>   
 
+<script>
+    $(document).ready(function(){
+
+  $('#cpf').mask('000.000.000-00', {reverse: true});
+
+  });
+    </script>
 
 
 

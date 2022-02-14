@@ -22,11 +22,11 @@
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
-                <li><a href="http://127.0.0.1:8000/home">Inicio</a></li>
-                <li><a href="http://127.0.0.1:8000/cadastrop">Cadastrar nova Pessoa</a></li>
-                <li><a href="http://127.0.0.1:8000/cadastroprot">Cadastrar novo Protocolo</a></li>
-                <li><a href="http://127.0.0.1:8000/index">Pessoas Cadastradas</a></li>
-                <li><a href="http://127.0.0.1:8000/lista">Protocolos Cadastrados</a></li>
+                <li><a href="{{url('home')}}">Inicio</a></li>
+                <li><a href="{{url('cadastrop')}}">Cadastrar nova Pessoa</a></li>
+                <li><a href="{{url('cadastroprot')}}">Cadastrar novo Protocolo</a></li>
+                <li><a href="{{url('index')}}">Pessoas Cadastradas</a></li>
+                <li><a href="{{url('lista')}}">Protocolos Cadastrados</a></li>
             </ul>
         </nav>
     </header>      
@@ -53,7 +53,7 @@
         </thead>
         
         <tbody>
-           
+
             @foreach($protocolo as $protocolo)
             <tr>
                 <td>{{ $protocolo->numeroprot }}</td>
@@ -61,12 +61,15 @@
                 <td>{{ $protocolo->descricao }} </td>
                 <td>
                     <a href="{{ route('showprot', $protocolo->numeroprot) }}" class="btn btn-primary" style="float: right">Ver</a>
+                </td>
+                <td>
                     <a href="{{ route('editprot', $protocolo->numeroprot) }}" class="btn btn-success" style="float: right">Editar</a>
+                </td>
+                <td>
                     <form action="/deleteprot/{{ $protocolo->numeroprot }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit"  class="btn btn-danger" style="float: right"><i class='fa fa-trash'></i> Delete</a></button>
-    
                     </form>
                 </td>
             </tr>

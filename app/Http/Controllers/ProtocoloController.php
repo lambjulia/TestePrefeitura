@@ -110,7 +110,7 @@ class ProtocoloController extends Controller
     {
         $protocolo = protocolo::find($numeroprot);
         $protocolo->delete();
-        return redirect('/index');
+        return redirect('/lista');
     }
 
 }

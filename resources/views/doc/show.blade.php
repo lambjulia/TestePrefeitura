@@ -20,11 +20,11 @@
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
-                <li><a href="http://127.0.0.1:8000/home">Inicio</a></li>
-                <li><a href="http://127.0.0.1:8000/cadastro">Cadastrar nova Pessoa</a></li>
-                <li><a href="http://127.0.0.1:8000/cadastroprot">Cadastrar novo Protocolo</a></li>
-                <li><a href="http://127.0.0.1:8000/index">Pessoas Cadastradas</a></li>
-                <li><a href="http://127.0.0.1:8000/lista">Protocolos Cadastrados</a></li>
+                <li><a href="{{url('home')}}">Inicio</a></li>
+                <li><a href="{{url('cadastrop')}}">Cadastrar nova Pessoa</a></li>
+                <li><a href="{{url('cadastroprot')}}">Cadastrar novo Protocolo</a></li>
+                <li><a href="{{url('index')}}">Pessoas Cadastradas</a></li>
+                <li><a href="{{url('lista')}}">Protocolos Cadastrados</a></li>
             </ul>
         </nav>
     </header>  

@@ -66,6 +66,7 @@ public function autenticar(Request $request) {
     }
      }
      
+     
 
 }
 

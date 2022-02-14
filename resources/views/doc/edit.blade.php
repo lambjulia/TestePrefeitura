@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"
+    integrity="sha256-Kg2zTcFO9LXOc7IwcBx1YeUBJmekycsnTsq2RuFHSZU=" crossorigin="anonymous"></script>
+
     <title>Editar Pessoa</title>
 </head>
 <body>
@@ -20,11 +25,11 @@
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
-                <li><a href="http://127.0.0.1:8000/home">Inicio</a></li>
-                <li><a href="http://127.0.0.1:8000/cadastrop">Cadastrar nova Pessoa</a></li>
-                <li><a href="http://127.0.0.1:8000/cadastroprot">Cadastrar novo Protocolo</a></li>
-                <li><a href="http://127.0.0.1:8000/index">Pessoas Cadastradas</a></li>
-                <li><a href="http://127.0.0.1:8000/lista">Protocolos Cadastrados</a></li>
+                <li><a href="{{url('home')}}">Inicio</a></li> 
+                <li><a href="{{url('cadastrop')}}">Cadastrar nova Pessoa</a></li>
+                <li><a href="{{url('cadastroprot')}}">Cadastrar novo Protocolo</a></li>
+                <li><a href="{{url('index')}}">Pessoas Cadastradas</a></li>
+                <li><a href="{{url('lista')}}">Protocolos Cadastrados</a></li>
             </ul>
         </nav>
     </header>  
@@ -74,7 +79,13 @@
 
 </form>   
 <br><br><br>
+<script>
+    $(document).ready(function(){
 
+  $('#cpf').mask('000.000.000-00', {reverse: true});
+
+  });
+    </script>
 
 </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

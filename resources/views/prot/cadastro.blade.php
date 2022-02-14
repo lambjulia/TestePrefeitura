@@ -24,15 +24,15 @@
 
                     <form action="/cadastro" method="post">
                       @csrf
-                    <input name="name"  type="text" placeholder="Nome" class="form-control form-control-lg" />
+                    <input name="name"  type="text" placeholder="Nome" class="form-control form-control-lg" required />
                    
                   </div>
                   <div class="form-outline mb-4">
-                  <input name="email"  type="email" placeholder="Email" class="form-control form-control-lg" />
+                  <input name="email"  type="email" placeholder="Email" class="form-control form-control-lg" required />
                   </div>
 
                   <div class="form-outline mb-4">
-                    <input name="password" type="password" placeholder="Senha" class="form-control form-control-lg" />
+                    <input name="password" type="password" placeholder="Senha" class="form-control form-control-lg" required />
                     
                   </div>
       

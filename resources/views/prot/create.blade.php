@@ -20,11 +20,11 @@
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
-                <li><a href="http://127.0.0.1:8000/home">Inicio</a></li>
-                <li><a href="http://127.0.0.1:8000/cadastrop">Cadastrar nova Pessoa</a></li>
-                <li><a href="http://127.0.0.1:8000/cadastroprot">Cadastrar novo Protocolo</a></li>
-                <li><a href="http://127.0.0.1:8000/index">Pessoas Cadastradas</a></li>
-                <li><a href="http://127.0.0.1:8000/lista">Protocolos Cadastrados</a></li>
+                <li><a href="{{url('home')}}">Inicio</a></li>
+                <li><a href="{{url('cadastrop')}}">Cadastrar nova Pessoa</a></li>
+                <li><a href="{{url('cadastroprot')}}">Cadastrar novo Protocolo</a></li>
+                <li><a href="{{url('index')}}">Pessoas Cadastradas</a></li>
+                <li><a href="{{url('lista')}}">Protocolos Cadastrados</a></li>
             </ul>
         </nav>
     </header>      
@@ -46,7 +46,7 @@
         <input type="date" name="data" id="data" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" placeholder="Data" required><br>
         <input type="text" name="prazo" id="prazo" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" placeholder="Prazo" required><br>
 
-    <select  style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless"  name="contribuinte" id="">
+    <select required="required" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless"  name="contribuinte" id="">
         <option  value="">Selecione uma pessoa</option>    
         @foreach ($pessoa as $p)
         <option  value="{{ $p->nome }}"> 
