@@ -20,57 +20,63 @@
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
-                <li><a href="home">Inicio</a></li>
-                <li><a href="cadastro">Cadastrar nova Pessoa</a></li>
-                <li><a href="cadastroprot">Cadastrar novo Protocolo</a></li>
-                <li><a href="index">Pessoas Cadastradas</a></li>
-                <li><a href="lista">Protocolos Cadastrados</a></li>
+                <li><a href="http://127.0.0.1:8000/home">Inicio</a></li>
+                <li><a href="http://127.0.0.1:8000/cadastrop">Cadastrar nova Pessoa</a></li>
+                <li><a href="http://127.0.0.1:8000/cadastroprot">Cadastrar novo Protocolo</a></li>
+                <li><a href="http://127.0.0.1:8000/index">Pessoas Cadastradas</a></li>
+                <li><a href="http://127.0.0.1:8000/lista">Protocolos Cadastrados</a></li>
             </ul>
         </nav>
     </header>  
 
-    <section class="vh-100" style="background-color:#d8d8d8ce">
-        <div class ="container py-5 h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+    <section  class="vh-100" style="background-color:#d8d8d8ce">
+        <div class ="container py-5 h-50">
+            <div class="row d-flex justify-content-center align-items-center h-50">
+                <div class="col-5 col-md-5 col-lg-5 col-xl-6">
                     <div class="card shadow-2-strong" style="border-radius: 1rem;">
-                      <div class="card-body p-5 text-center">    
+                      <div class="card-body p-10 text-center">     
     <form action="{{ route('alterar_cadastro', $pessoa->id) }}" method="POST">
         {{csrf_field()}}
-    
-        <label for="">Nome:</label> <br>
-        <input type="text" name="nome" value =" {{ $pessoa->nome }}"><br>
-        <label for="">Data de nascimento:</label><br>
-        <input type="text" name="data_de_nascimento"  value =" {{ $pessoa->data_de_nascimento }}"><br>
-        <label for="">CPF:</label><br>
-        <input type="text" name="cpf"  value =" {{ $pessoa->cpf }}"><br>
-        <label for="">Sexo:</label><br>
-        <input type="text" name="sexo"  value =" {{ $pessoa->sexo }}"><br>
-        <label for="">Cidade:</label><br>
-        <input type="text" name="cidade"  value =" {{ $pessoa->cidade }}"><br>
-        <label for="">Bairro:</label><br>
-        <input type="text" name="bairro" value =" {{ $pessoa->bairro }}"><br>
-        <label for="">Rua:</label><br>
-        <input type="text" name="rua"  value =" {{ $pessoa->rua }}"><br>
-        <label for="">Numero:</label><br>
-        <input type="text" name="numero" value =" {{ $pessoa->numero }}"><br>
-        <label for="">Complemento:</label><br>
-        <input type="text" name="complemento"  value =" {{ $pessoa->complemento }}"><br>
-    
-   
+    <h3>Edite o cadastro<h3>
+        @csrf
+        <div class="text-center" style=" text-align:left; padding-top: 30px, font-size:0em, padding-bottom: 30px">
+        
+            <input type="text" name="nome" id="nome" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" value =" {{ $pessoa->nome }}" placeholder="nome" required><br>
+            <input type="text" name="data_de_nascimento" id="data_de_nascimento" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" value =" {{ $pessoa->data_de_nascimento }}" placeholder="Data de Nacimento" required><br>
 
-    
-    
+            <input type="text" name="cpf" id="cpf" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" value =" {{ $pessoa->cpf }}" placeholder="CPF" required><br>
+        
+            <div style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless">
+            <input type="radio" name="sexo" value="masculino" id="masculino" checked>
+            <label style="font-size:large" for="masculino">Masculino</label>
+            <input type="radio" name="sexo"  value="feminino" id="feminino">
+            <label style="font-size: large" for="feminino">Feminino</label>
+            </div>
+            <br>
+        
+            <input type="text" name="cidade" id="cidade" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless"value =" {{ $pessoa->cidade }}" placeholder="Cidade" required><br>
+           
+            <input type="text" name="bairro" id="bairro" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless"value =" {{ $pessoa->bairro }}" placeholder="Bairro" required><br>
+          
+            <input type="text" name="rua" id="rua" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" value =" {{ $pessoa->rua }}" placeholder="Rua" required><br>
+           
+            <input type="text" name="numero" id="numero" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless"value =" {{ $pessoa->numero }}" placeholder="Numero" required><br>
+           
+            <input type="text" name="complemento" id="complemento" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" value =" {{ $pessoa->complemento }}" placeholder="Complemento" required>
+    <br><button type="submit"  class="btn btn-success" style="float: right">Enviar</button>
 
-    <button type="submit"  class="btn btn-success">Enviar</button>
-
+</div>
+</div>
+</div>
+</div>
+</div>
 
 
 </form>   
+<br><br><br>
 
 
-
-
+</section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

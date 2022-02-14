@@ -20,11 +20,11 @@
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
-                <li><a href="home">Inicio</a></li>
-                <li><a href="cadastrop">Cadastrar nova Pessoa</a></li>
-                <li><a href="cadastroprot">Cadastrar novo Protocolo</a></li>
-                <li><a href="index">Pessoas Cadastradas</a></li>
-                <li><a href="lista">Protocolos Cadastrados</a></li>
+                <li><a href="http://127.0.0.1:8000/home">Inicio</a></li>
+                <li><a href="http://127.0.0.1:8000/cadastrop">Cadastrar nova Pessoa</a></li>
+                <li><a href="http://127.0.0.1:8000/cadastroprot">Cadastrar novo Protocolo</a></li>
+                <li><a href="http://127.0.0.1:8000/index">Pessoas Cadastradas</a></li>
+                <li><a href="http://127.0.0.1:8000/lista">Protocolos Cadastrados</a></li>
             </ul>
         </nav>
     </header>  
@@ -35,14 +35,11 @@
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                     <div class="card shadow-2-strong" style="border-radius: 1rem;">
                       <div class="card-body p-5 text-center">    
-    <label for="">Contribuinte:</label> <br>
-    <input type="text" name="contribuinte" value =" {{ $protocolo->contribuinte }}"><br>
-    <label for="">Descrição:</label><br>
-    <input type="text" name="descricao"  value =" {{ $protocolo->descricao }}"><br>
-    <label for="">Data:</label><br>
-    <input type="text" name="data"  value =" {{ $protocolo->data }}"><br>
-    <label for="">Prazo:</label><br>
-    <input type="text" name="prazo"  value =" {{ $protocolo->prazo }}"><br>
+   <h3>Cadastro Protocolo</h3>
+    <input type="text" name="contribuinte"  style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless"  value =" {{ $protocolo->contribuinte }}"><br>
+    <input type="text" name="descricao"  style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless"  value =" {{ $protocolo->descricao }}"><br>
+    <input type="text" name="data"  style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless"  value =" {{ $protocolo->data }}"><br>
+    <input type="text" name="prazo"  style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless"  value =" {{ $protocolo->prazo }}"><br>
  
     
    

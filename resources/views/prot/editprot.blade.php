@@ -21,11 +21,11 @@
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
-                <li><a href="home">Inicio</a></li>
-                <li><a href="cadastrop">Cadastrar nova Pessoa</a></li>
-                <li><a href="cadastroprot">Cadastrar novo Protocolo</a></li>
-                <li><a href="index">Pessoas Cadastradas</a></li>
-                <li><a href="lista">Protocolos Cadastrados</a></li>
+                <li><a href="http://127.0.0.1:8000/home">Inicio</a></li>
+                <li><a href="http://127.0.0.1:8000/cadastrop">Cadastrar nova Pessoa</a></li>
+                <li><a href="http://127.0.0.1:8000/cadastroprot">Cadastrar novo Protocolo</a></li>
+                <li><a href="http://127.0.0.1:8000/index">Pessoas Cadastradas</a></li>
+                <li><a href="http://127.0.0.1:8000/lista">Protocolos Cadastrados</a></li>
             </ul>
         </nav>
     </header>  
@@ -38,24 +38,24 @@
                       <div class="card-body p-5 text-center">    
     <form action="{{ route('alterar_protocolo', $protocolo->numeroprot)}}" method="POST">
         @csrf
-        <h1>Edite o protocolo aqui:</h1>
-    <div class="text-center" style=" text-align:left; padding-top: 60px">
-    
-    <label for="descricao">Descrição:</label>
+        <h3>Edite o protocolo aqui:</h3>
+    <div class="text-center" style=" text-align:left; padding-top: 40px">
    
-    <input type="text" name="descricao" value =" {{ $protocolo->descricao }}" required><br>
-    <label for="data">Data:</label>
-    <input type="date" name="data" value =" {{ $protocolo->data }}"required><br>
-    <label for="prazo">Prazo:</label>
-    <input type="text" name="prazo" value =" {{ $protocolo->prazo }}" required><br>
-    <input type="text" name="contribuinte" value="{{ $pessoa->nome }}">
+
+    <input type="text" name="descricao"  style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless"  value =" {{ $protocolo->descricao }}" placeholder="Descrição" required><br>
+    
+    <input type="text" name="data"  style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless"  value =" {{ $protocolo->data }}" placeholder="Data" required><br>
+    
+    <input type="text" name="prazo"  style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless"  value =" {{ $protocolo->prazo }}" placeholder="Prazo" required><br>
+   
+    <input type="text" name="contribuinte"  style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless"  value="{{ $pessoa->nome }}" placeholder="Contribuinte" ><br>
  
    
 
     
      
 
-    <button type="submit"  class="btn btn-success">Enviar</button>
+    <button type="submit"  class="btn btn-success" style="float: right">Enviar</button>
 </div>
 </form>   
 

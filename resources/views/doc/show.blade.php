@@ -20,39 +20,31 @@
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
-                <li><a href="home">Inicio</a></li>
-                <li><a href="cadastro">Cadastrar nova Pessoa</a></li>
-                <li><a href="cadastroprot">Cadastrar novo Protocolo</a></li>
-                <li><a href="index">Pessoas Cadastradas</a></li>
-                <li><a href="lista">Protocolos Cadastrados</a></li>
+                <li><a href="http://127.0.0.1:8000/home">Inicio</a></li>
+                <li><a href="http://127.0.0.1:8000/cadastro">Cadastrar nova Pessoa</a></li>
+                <li><a href="http://127.0.0.1:8000/cadastroprot">Cadastrar novo Protocolo</a></li>
+                <li><a href="http://127.0.0.1:8000/index">Pessoas Cadastradas</a></li>
+                <li><a href="http://127.0.0.1:8000/lista">Protocolos Cadastrados</a></li>
             </ul>
         </nav>
     </header>  
-    <section class="vh-100" style="background-color:#d8d8d8cee">
+    <section class="vh-100" style="background-color:#d8d8d8ce">
         <div class ="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                     <div class="card shadow-2-strong" style="border-radius: 1rem;">
                       <div class="card-body p-5 text-center">    
   
-    <label for="">Nome:</label> <br>
-    <input type="text" name="nome" value =" {{ $pessoa->nome }}"><br>
-    <label for="">Data de nascimento:</label><br>
-    <input type="text" name="data_de_nascimento"  value =" {{ $pessoa->data_de_nascimento }}"><br>
-    <label for="">CPF:</label><br>
-    <input type="text" name="cpf"  value =" {{ $pessoa->cpf }}"><br>
-    <label for="">Sexo:</label><br>
-    <input type="text" name="sexo"  value =" {{ $pessoa->sexo }}"><br>
-    <label for="">Cidade:</label><br>
-    <input type="text" name="cidade"  value =" {{ $pessoa->cidade }}"><br>
-    <label for="">Bairro:</label><br>
-    <input type="text" name="bairro" value =" {{ $pessoa->bairro }}"><br>
-    <label for="">Rua:</label><br>
-    <input type="text" name="rua"  value =" {{ $pessoa->rua }}"><br>
-    <label for="">Numero:</label><br>
-    <input type="text" name="numero" value =" {{ $pessoa->numero }}"><br>
-    <label for="">Complemento:</label><br>
-    <input type="text" name="complemento"  value =" {{ $pessoa->complemento }}"><br>
+    <h4>Cadastro Pessoa<h4>
+    <input type="text" name="nome"  style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" value =" {{ $pessoa->nome }}"><br>
+    <input type="text" name="data_de_nascimento"  style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" value =" {{ $pessoa->data_de_nascimento }}"><br>
+    <input type="text" name="cpf"  style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" value =" {{ $pessoa->cpf }}"><br>
+    <input type="text" name="sexo"  style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" value =" {{ $pessoa->sexo }}"><br>
+    <input type="text" name="cidade"  style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" value =" {{ $pessoa->cidade }}"><br>
+    <input type="text" name="bairro"  style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" value =" {{ $pessoa->bairro }}"><br>
+    <input type="text" name="rua"  style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" value =" {{ $pessoa->rua }}"><br>
+    <input type="text" name="numero"  style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" value =" {{ $pessoa->numero }}"><br>
+    <input type="text" name="complemento"  style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" value =" {{ $pessoa->complemento }}"><br>
     
    
 

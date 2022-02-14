@@ -20,16 +20,16 @@
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
-                <li><a href="home">Inicio</a></li>
-                <li><a href="cadastrop">Cadastrar nova Pessoa</a></li>
-                <li><a href="cadastroprot">Cadastrar novo Protocolo</a></li>
-                <li><a href="index">Pessoas Cadastradas</a></li>
-                <li><a href="lista">Protocolos Cadastrados</a></li>
+                <li><a href="http://127.0.0.1:8000/home">Inicio</a></li>
+                <li><a href="http://127.0.0.1:8000/cadastrop">Cadastrar nova Pessoa</a></li>
+                <li><a href="http://127.0.0.1:8000/cadastroprot">Cadastrar novo Protocolo</a></li>
+                <li><a href="http://127.0.0.1:8000/index">Pessoas Cadastradas</a></li>
+                <li><a href="http://127.0.0.1:8000/lista">Protocolos Cadastrados</a></li>
             </ul>
         </nav>
     </header>      
 
-    <section class="vh-100" style="background-color:#d8d8d8ce">
+    <section class="vh-50" style="background-color:#d8d8d8ce">
         <div class ="container py-5 h-50">
             <div class="row d-flex justify-content-center align-items-center h-50">
                 <div class="col-5 col-md-5 col-lg-5 col-xl-5">
@@ -40,32 +40,32 @@
 
         <h2>Cadastrar Nova Pessoa</h2>
         @csrf
-    <div class="form-holder" style=" text-align:left; padding-top: 60px">
-    <label for="nome">Nome:</label>
-    <input type="text" name="nome" id="nome" required><br>
-    <label for="data_de_nascimento">Data de nascimento:</label>
-    <input type="date" name="data_de_nascimento" id="data_de_nascimento" required><br>
-    <label for="cpf">CPF:</label>
-    <input type="text" name="cpf" id="cpf" required><br>
-    <label for="sexo">Sexo:</label>
-    <input type="text" name="sexo" id="sexo" required><br>
-    <label for="cidade">Cidade:</label>
-    <input type="text" name="cidade" id="cidade"><br>
-    <label for="bairro">Bairro:</label>
-    <input type="text" name="bairro" id="bairro"><br>
-    <label for="rua">Rua:</label>
-    <input type="text" name="rua" id="rua"><br>
-    <label for="numero">Numero:</label>
-    <input type="text" name="numero" id="numero"><br>
-    <label for="complemento">Complemento:</label>
-    <input type="text" name="complemento" id="complemento"><br>
+    <div class="form-holder" style=" text-align:left; padding-top: 40px">
+    <input type="text" name="nome" id="nome" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" placeholder="Nome" required><br>
+    <input type="date" name="data_de_nascimento" id="data_de_nascimento" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" placeholder="Data de Nascimento" required><br>
+    <input type="text" name="cpf" id="cpf" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" placeholder="CPF" required><br>
+
+    <div style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless">
+    <input type="radio" name="sexo" value="masculino" id="masculino" checked>
+    <label style="font-size:large" for="masculino">Masculino</label>
+    <input type="radio" name="sexo"  value="feminino" id="feminino">
+    <label style="font-size: large" for="feminino">Feminino</label>
+    </div>
+    <br>
+
+    <input type="text" name="cidade" id="cidade" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" placeholder="Cidade" required><br>
+    <input type="text" name="bairro" id="bairro" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" placeholder="Bairro" required><br>
+    <input type="text" name="rua" id="rua" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" placeholder="Rua" required><br>
+    <input type="text" name="numero" id="numero" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" placeholder="Número" required><br>
+    <input type="text" name="complemento" id="complemento" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" placeholder="Complemento" required><br>
+    
     
    
 
     
      
 
-    <button type="submit"  class="btn btn-success">Enviar</button>
+    <button type="submit" style="float:right"  class="btn btn-success">Enviar</button>
 </div>
 </form>   
 

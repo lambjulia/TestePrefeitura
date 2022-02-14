@@ -59,7 +59,11 @@ public function autenticar(Request $request) {
 
         return redirect()->route('home');
      }else {
-         return redirect()->route('home', ['erro' => '1']);
+        $msg = array(
+            "msg" => "Login ou senha não são válidos"
+        ); 
+        return redirect()->back()->withErrors( $msg )->withInput();
+    }
      }
      
 
@@ -71,4 +75,4 @@ public function autenticar(Request $request) {
 
 
 
-}
+

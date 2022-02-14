@@ -20,11 +20,11 @@
                 <div class="line3"></div>
             </div>
             <ul class="nav-list">
-                <li><a href="home">Inicio</a></li>
-                <li><a href="cadastrop">Cadastrar nova Pessoa</a></li>
-                <li><a href="cadastroprot">Cadastrar novo Protocolo</a></li>
-                <li><a href="index">Pessoas Cadastradas</a></li>
-                <li><a href="lista">Protocolos Cadastrados</a></li>
+                <li><a href="http://127.0.0.1:8000/home">Inicio</a></li>
+                <li><a href="http://127.0.0.1:8000/cadastrop">Cadastrar nova Pessoa</a></li>
+                <li><a href="http://127.0.0.1:8000/cadastroprot">Cadastrar novo Protocolo</a></li>
+                <li><a href="http://127.0.0.1:8000/index">Pessoas Cadastradas</a></li>
+                <li><a href="http://127.0.0.1:8000/lista">Protocolos Cadastrados</a></li>
             </ul>
         </nav>
     </header>      
@@ -41,28 +41,25 @@
         @csrf
     
         <h2>Cadastrar Novo Protocolo</h2>
-    <div class="form-holder" style=" text-align:left; padding-top: 60px">
-    <label for="descricao">Descrição:</label>
-    <input type="text" name="descricao" numeroprot="descricao" required><br>
-    <label for="data">Data:</label>
-    <input type="date" name="data" numeroprot="data" required><br>
-    <label for="prazo">Prazo:</label>
-    <input type="text" name="prazo" numeroprot="prazo" required><br>
+    <div class="form-holder" style=" text-align:left; padding-top: 40px">
+        <input type="text" name="descricao" id="descricao" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" placeholder="Descrição" required><br>
+        <input type="date" name="data" id="data" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" placeholder="Data" required><br>
+        <input type="text" name="prazo" id="prazo" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" placeholder="Prazo" required><br>
 
-    <select  name="contribuinte" id="">
-        <option value="">Selecione uma pessoa</option>    
+    <select  style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless"  name="contribuinte" id="">
+        <option  value="">Selecione uma pessoa</option>    
         @foreach ($pessoa as $p)
-        <option value="{{ $p->nome }}"> 
+        <option  value="{{ $p->nome }}"> 
         {{ $p->nome }}
         </option>
         @endforeach
     </select> 
    
-
+<br>
     
      
 
-    <button type="submit"  class="btn btn-success">Enviar</button>
+    <button type="submit"  class="btn btn-success" style="float: right">Enviar</button>
 </div>
 </form>   
 
