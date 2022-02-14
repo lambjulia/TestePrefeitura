@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Login Prefeitura</title>
 
-    <section class="vh-100" style="background-color: #508bfc;">
+    <section class="vh-100" style="background-color: black;">
         <div class="container py-5 h-100">
           <div class="row d-flex justify-content-center align-items-center h-100">
           
@@ -30,35 +30,37 @@
                   </div> 
                   @endif
 
-                  <h3 class="mb-5">Sign in</h3>
+                  <h3 class="mb-5">Entre em sua conta</h3>
+      
+                  
+          
+                
+                  <div class="form-outline mb-4">
+
+                    <form action={{ route('login') }} method="post">
+                      @csrf
+                    <input name="usuario" value="{{ old('usuario') }}" type="text" placeholder="Usuário" class="form-control form-control-lg" />
+                   
+                  </div>
       
                   <div class="form-outline mb-4">
-                    <input type="email" id="typeEmailX-2" class="form-control form-control-lg" />
-                    <label class="form-label" for="typeEmailX-2">Email</label>
+                    <input name="senha" value="{{ old('senha') }}" type="password" placeholder="Senha" class="form-control form-control-lg" />
+                    
                   </div>
       
-                  <div class="form-outline mb-4">
-                    <input type="password" id="typePasswordX-2" class="form-control form-control-lg" />
-                    <label class="form-label" for="typePasswordX-2">Password</label>
-                  </div>
+            
+                  
       
-                  <!-- Checkbox -->
-                  <div class="form-check d-flex justify-content-start mb-4">
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      value=""
-                      id="form1Example3"
-                    />
-                    <label class="form-check-label" for="form1Example3"> Remember password </label>
-                  </div>
+                  <button class="btn btn-dark" type="submit">Login</button><br>
       
-                  <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
-      
+                </form>
+
+                {{ isset($erro) && $erro != '' ? $erro : '' }}
+
                   <hr class="my-4">
       
                   <div>
-                    <p class="mb-0">Don't have an account? <a href="#!" class="text-black-50 fw-bold">Sign Up</a></p>
+                    <p class="mb-0"><a href="cadastro" class="text-black-50 fw-bold">Se Cadastre</a></p>
                   </div>
       
                 </div>

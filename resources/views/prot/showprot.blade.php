@@ -21,7 +21,7 @@
             </div>
             <ul class="nav-list">
                 <li><a href="home">Inicio</a></li>
-                <li><a href="cadastro">Cadastrar nova Pessoa</a></li>
+                <li><a href="cadastrop">Cadastrar nova Pessoa</a></li>
                 <li><a href="cadastroprot">Cadastrar novo Protocolo</a></li>
                 <li><a href="index">Pessoas Cadastradas</a></li>
                 <li><a href="lista">Protocolos Cadastrados</a></li>
@@ -29,6 +29,12 @@
         </nav>
     </header>  
   
+    <section class="vh-100" style="background-color:#d8d8d8ce">
+        <div class ="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-50">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                      <div class="card-body p-5 text-center">    
     <label for="">Contribuinte:</label> <br>
     <input type="text" name="contribuinte" value =" {{ $protocolo->contribuinte }}"><br>
     <label for="">Descrição:</label><br>

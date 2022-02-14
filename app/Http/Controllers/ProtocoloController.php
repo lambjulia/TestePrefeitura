@@ -65,7 +65,7 @@ class ProtocoloController extends Controller
         
             $protocolo->save();
 
-            return redirect('/index');
+            return redirect('/lista');
     }
 
     public function show ($numeroprot) 
@@ -79,7 +79,7 @@ class ProtocoloController extends Controller
     public function edit($numeroprot) 
     {
         $protocolo = Protocolo::find($numeroprot);
-        $pessoa='pessoa';
+        $pessoa = Pessoa::find($numeroprot);
         
         return view ('prot/editprot', compact('pessoa', 'protocolo'));
         
@@ -90,7 +90,7 @@ class ProtocoloController extends Controller
     {
         
       $protocolo = Protocolo::findOrFail($numeroprot);
-      $pessoa = Pessoa::find($id);
+      $pessoa = Pessoa::find($numeroprot);
         $protocolo->update([
           'contribuinte' => $request -> contribuinte,
           'descricao' => $request -> descricao,
@@ -101,7 +101,7 @@ class ProtocoloController extends Controller
       ]);
         
 
-        return redirect('/index');
+        return redirect('/lista');
       
         
     }

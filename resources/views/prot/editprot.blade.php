@@ -12,6 +12,7 @@
 
     
     <header>
+    
         <nav >
             <a class="logo" href="home">Prefeitura</a>
             <div class="mobile-menu">
@@ -21,7 +22,7 @@
             </div>
             <ul class="nav-list">
                 <li><a href="home">Inicio</a></li>
-                <li><a href="cadastro">Cadastrar nova Pessoa</a></li>
+                <li><a href="cadastrop">Cadastrar nova Pessoa</a></li>
                 <li><a href="cadastroprot">Cadastrar novo Protocolo</a></li>
                 <li><a href="index">Pessoas Cadastradas</a></li>
                 <li><a href="lista">Protocolos Cadastrados</a></li>
@@ -29,25 +30,32 @@
         </nav>
     </header>  
 
+    <section class="vh-100" style="background-color:#d8d8d8ce">
+        <div class ="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-30">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                      <div class="card-body p-5 text-center">    
     <form action="{{ route('alterar_protocolo', $protocolo->numeroprot)}}" method="POST">
         @csrf
-    <div class="text-center" style=" text-align:left; padding-top: 200px">
+        <h1>Edite o protocolo aqui:</h1>
+    <div class="text-center" style=" text-align:left; padding-top: 60px">
     
     <label for="descricao">Descrição:</label>
    
-    <input type="text" name="descricao" numeroprot="descricao" required><br>
+    <input type="text" name="descricao" value =" {{ $protocolo->descricao }}" required><br>
     <label for="data">Data:</label>
-    <input type="date" name="data" numeroprot="data" required><br>
+    <input type="date" name="data" value =" {{ $protocolo->data }}"required><br>
     <label for="prazo">Prazo:</label>
-    <input type="text" name="prazo" numeroprot="prazo" required><br>
-
+    <input type="text" name="prazo" value =" {{ $protocolo->prazo }}" required><br>
+    <input type="text" name="contribuinte" value="{{ $pessoa->nome }}">
  
    
 
     
      
 
-    <button type="submit">Enviar</button>
+    <button type="submit"  class="btn btn-success">Enviar</button>
 </div>
 </form>   
 

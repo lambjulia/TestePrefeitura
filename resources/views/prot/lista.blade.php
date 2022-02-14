@@ -23,7 +23,7 @@
             </div>
             <ul class="nav-list">
                 <li><a href="home">Inicio</a></li>
-                <li><a href="cadastro">Cadastrar nova Pessoa</a></li>
+                <li><a href="cadastrop">Cadastrar nova Pessoa</a></li>
                 <li><a href="cadastroprot">Cadastrar novo Protocolo</a></li>
                 <li><a href="index">Pessoas Cadastradas</a></li>
                 <li><a href="lista">Protocolos Cadastrados</a></li>
@@ -32,7 +32,12 @@
     </header>      
     <main></main>
 
-
+    <section class="vh-100" style="background-color:#d8d8d8ce">
+        <div class ="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-50">
+                <div class="col-12 col-md-10 col-lg-10 col-xl-10">
+                    <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                      <div class="card-body p-5 text-center">    
 <div class ="container">
     <h1> Listagem de Protocolos</h1>    
 

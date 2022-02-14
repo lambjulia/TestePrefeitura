@@ -115,11 +115,7 @@ class PessoasController extends Controller
         return redirect('/index');
     }
 
-  
-
  
-
-
 
     /**
      * 

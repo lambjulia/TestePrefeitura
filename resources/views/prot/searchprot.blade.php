@@ -42,45 +42,47 @@
               <div class="card-body p-5 text-center">        
      
 
-<h1> Listagem de Pessoas</h1>  
 
+<div class ="container">
+<h1> Listagem de Protocolos</h1>    
 
 
 <table class ="table table-condensed">
-    <thead>
-        <tr>
-            <td>ID</td>
-            <td>Nome</td>
-            <td>CPF</td>
+        <thead>
+            <tr>
+                
+                <td>Contribuinte</td>
+                <td>Descrição</td>
+                <td>Data</td>
+                <td>Prazo</td>
+                
+            </tr>    
+        </thead>
+        
+        <tbody>
+           
+            @foreach($protocolo as $protocolo)
+            <tr>
+                
+                <td>{{ $protocolo->contribuinte }}</td>
+                <td>{{ $protocolo->descricao }} </td>
+                <td>{{ $protocolo->data }} </td>
+                <td>{{ $protocolo->prazo }} </td>
+                <td>
+                
+                    </form>
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+    
+    </div>
+
             
         </tr>    
     </thead>
-   
-    <tbody>
-        @foreach($pessoa as $pessoa)
-        <tr>
-            <td>{{ $pessoa->id }}</td>
-            <td>{{ $pessoa->nome }}</td>
-            <td>{{ $pessoa->cpf }} </td>
-            <td>
-              
-                    
-               <a href="{{ route('show', $pessoa->id) }}" class="btn btn-primary" style="float: right">Ver</a>
-            
-
-                <a href="{{ route('edit', $pessoa->id) }}" class="btn btn-success"  style="float: right">Editar</a>
-                <form action="/delete/{{ $pessoa->id }}" method="POST">
-                    @csrf 
-                    @method('DELETE')
-                    <button type="submit"  class="btn btn-danger"><i class='fa fa-trash'  style="float: right"></i>Delete</a></button>
-                </div>
-                </form>
-            </td>
-        </tr>
-        @endforeach
-    </tbody>
-</table>
-</div>
+    
 
 
 <script src="{{asset('js/validation/validation-pessoas/validation-pessoas-create.js')}}"></script>

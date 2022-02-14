@@ -51,7 +51,14 @@
         <tr>
             <td>ID</td>
             <td>Nome</td>
+            <td>Data de Nascimento</td>
             <td>CPF</td>
+            <td>Sexo</td>
+            <td>Cidade</td>
+            <td>Bairro</td>
+            <td>Rua</td>
+            <td>Numero</td>
+            <td>Complemento</td>
             
         </tr>    
     </thead>
@@ -61,18 +68,18 @@
         <tr>
             <td>{{ $pessoa->id }}</td>
             <td>{{ $pessoa->nome }}</td>
+            <td>{{ $pessoa->data_de_nascimento }} </td>
             <td>{{ $pessoa->cpf }} </td>
+            <td>{{ $pessoa->sexo }} </td>
+            <td>{{ $pessoa->cidade }} </td>
+            <td>{{ $pessoa->bairro }} </td>
+            <td>{{ $pessoa->rua }} </td>
+            <td>{{ $pessoa->numero }} </td>
+            <td>{{ $pessoa->complemento }} </td>
             <td>
               
                     
-               <a href="{{ route('show', $pessoa->id) }}" class="btn btn-primary" style="float: right">Ver</a>
-            
-
-                <a href="{{ route('edit', $pessoa->id) }}" class="btn btn-success"  style="float: right">Editar</a>
-                <form action="/delete/{{ $pessoa->id }}" method="POST">
-                    @csrf 
-                    @method('DELETE')
-                    <button type="submit"  class="btn btn-danger"><i class='fa fa-trash'  style="float: right"></i>Delete</a></button>
+               
                 </div>
                 </form>
             </td>
@@ -81,6 +88,7 @@
     </tbody>
 </table>
 </div>
+
 
 
 <script src="{{asset('js/validation/validation-pessoas/validation-pessoas-create.js')}}"></script>

@@ -21,7 +21,7 @@
             </div>
             <ul class="nav-list">
                 <li><a href="home">Inicio</a></li>
-                <li><a href="cadastro">Cadastrar nova Pessoa</a></li>
+                <li><a href="cadastrop">Cadastrar nova Pessoa</a></li>
                 <li><a href="cadastroprot">Cadastrar novo Protocolo</a></li>
                 <li><a href="index">Pessoas Cadastradas</a></li>
                 <li><a href="lista">Protocolos Cadastrados</a></li>
@@ -29,9 +29,18 @@
         </nav>
     </header>      
 
+    <section class="vh-100" style="background-color:#d8d8d8ce">
+        <div class ="container py-5 h-50">
+            <div class="row d-flex justify-content-center align-items-center h-50">
+                <div class="col-5 col-md-5 col-lg-5 col-xl-5">
+                    <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                      <div class="card-body p-10 text-center">    
+
     <form action="{{ route('store')}}" method="POST">
+
+        <h2>Cadastrar Nova Pessoa</h2>
         @csrf
-    <div class="text-center" style=" text-align:left; padding-top: 200px">
+    <div class="form-holder" style=" text-align:left; padding-top: 60px">
     <label for="nome">Nome:</label>
     <input type="text" name="nome" id="nome" required><br>
     <label for="data_de_nascimento">Data de nascimento:</label>
@@ -56,7 +65,7 @@
     
      
 
-    <button type="submit">Enviar</button>
+    <button type="submit"  class="btn btn-success">Enviar</button>
 </div>
 </form>   
 
@@ -65,4 +74,11 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 </html>

@@ -11,9 +11,21 @@
 |
 */
 
+Route::get('/searchprot', 'HomeController@searchprot');
+
+Route::get('/search', 'HomeController@search');
+
+Route::get('/cadastro', 'RegistroController@create')->name('cadastrouser');
+
+Route::post('/cadastro', 'RegistroController@store')->name('store_user');
+
+
+
 Route::get('/index', 'PessoasController@index')->name('pessoas');
 
-Route::get('/cadastro', 'PessoasController@cadastro')->name('cadastro');
+Route::get('/cadastro', 'GhostController@create')->name('cadastro');
+
+Route::get('/cadastrop', 'PessoasController@cadastro')->name('cadastro');
 
 Route::post('/save', 'PessoasController@store')->name('store');
 
@@ -40,8 +52,16 @@ Route::delete('/deleteprot/{numeroprot}',  'ProtocoloController@delete');
 
 Route::get('/lista', 'ProtocoloController@index')->name('protocolo');
 
-Route::get('/home', function () {
-    return view ('prot/home');
-} );
 
-Route::get("/", 'LoginController@login');
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/{error?}', 'LoginController@login')->name('login');
+
+Route::post('/', 'LoginController@autenticar')->name('login');
+
+
+
+
+
+
