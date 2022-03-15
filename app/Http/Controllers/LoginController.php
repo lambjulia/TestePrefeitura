@@ -25,7 +25,7 @@ public function login(Request $request){
     return view('prot.login', ['erro'=>$erro]);
 }
 
-public function autenticar(Request $request) {
+protected function autenticar(Request $request) {
     //regras de validação
     $regras = [
         'usuario' => 'email',
@@ -65,9 +65,8 @@ public function autenticar(Request $request) {
         return redirect()->back()->withErrors( $msg )->withInput();
     }
      }
-     
-     
-
+    
+ 
 }
 
 

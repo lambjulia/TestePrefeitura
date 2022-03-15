@@ -43,6 +43,10 @@
     <form action="{{ route('store')}}" method="POST">
 
         <h2>Cadastrar Nova Pessoa</h2>
+
+
+     
+
         @csrf
     <div class="form-holder" style=" text-align:left; padding-top: 40px">
     <input type="text" name="nome" id="nome" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" placeholder="Nome" required><br>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\SeriesFormRequest; 
 use App\User;
+use Session;
 
 class RegistroController extends Controller
 {
@@ -20,6 +21,7 @@ class RegistroController extends Controller
         
         auth()->login($user);
         
-        return redirect()->to('/');
+
+            return redirect('/')->with('success','Login cadastrado com sucesso!');
     }
 }

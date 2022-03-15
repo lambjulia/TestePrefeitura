@@ -41,6 +41,17 @@
 <div class ="container">
     <h1> Listagem de Protocolos</h1>    
 
+    @if ($message = Session::get('success'))
+<div class="alert alert-success alert-block">
+        <strong>{{ $message }}</strong>
+</div>
+@endif
+
+@if ($message = Session::get('warning'))
+<div class="alert alert-danger">
+	<strong>{{ $message }}</strong>
+</div>
+@endif
 
 <table class ="table table-condensed">
         <thead>

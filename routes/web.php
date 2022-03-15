@@ -11,55 +11,55 @@
 |
 */
 
-Route::get('/searchprot', 'HomeController@searchprot');
+Route::get('/searchprot', 'HomeController@searchprot')->middleware('auth');
 
-Route::get('/search', 'HomeController@search');
+Route::get('/search', 'HomeController@search')->middleware('auth');
 
 Route::get('/cadastro', 'RegistroController@create')->name('cadastrouser');
 
 Route::post('/cadastro', 'RegistroController@store')->name('store_user');
 
 
-
-Route::get('/index', 'PessoasController@index')->name('pessoas');
+Route::get('/index', 'PessoasController@index')->name('pessoas')->middleware('auth');
 
 Route::get('/cadastro', 'GhostController@create')->name('cadastro');
 
-Route::get('/cadastrop', 'PessoasController@cadastro')->name('cadastro');
+Route::get('/cadastrop', 'PessoasController@cadastro')->name('cadastro')->middleware('auth');
 
-Route::post('/save', 'PessoasController@store')->name('store');
+Route::post('/save', 'PessoasController@store')->name('store')->middleware('auth');
 
-Route::get('/cadastro/ver/{id}', 'PessoasController@show')->name('show');
+Route::get('/cadastro/ver/{id}', 'PessoasController@show')->name('show')->middleware('auth');
 
-Route::get('/cadastro/edit/{id}', 'PessoasController@edit')->name('edit');
+Route::get('/cadastro/edit/{id}', 'PessoasController@edit')->name('edit')->middleware('auth');
 
-Route::post('/cadastro/{id}', 'PessoasController@update')->name('alterar_cadastro');
+Route::post('/cadastro/{id}', 'PessoasController@update')->name('alterar_cadastro')->middleware('auth');
 
-Route::delete('/delete/{id}',  'PessoasController@delete');
-
-
-Route::get('/cadastroprot', 'ProtocoloController@create')->name('cadastro_protocolo');
-
-Route::post('/saveprot', 'ProtocoloController@store')->name('store_protocolo');
-
-Route::get('/cadastroprot/ver/{numeroprot}', 'ProtocoloController@show')->name('showprot');
-
-Route::get('/cadastroprot/edit/{numeroprot}', 'ProtocoloController@edit')->name('editprot');
-
-Route::post('/cadastroprot/{numeroprot}', 'ProtocoloController@update')->name('alterar_protocolo');
-
-Route::delete('/deleteprot/{numeroprot}',  'ProtocoloController@delete');
-
-Route::get('/lista', 'ProtocoloController@index')->name('protocolo');
+Route::delete('/delete/{id}',  'PessoasController@delete')->middleware('auth');
 
 
+Route::get('/cadastroprot', 'ProtocoloController@create')->name('cadastro_protocolo')->middleware('auth');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/saveprot', 'ProtocoloController@store')->name('store_protocolo')->middleware('auth');
+
+Route::get('/cadastroprot/ver/{numeroprot}', 'ProtocoloController@show')->name('showprot')->middleware('auth');
+
+Route::get('/cadastroprot/edit/{numeroprot}', 'ProtocoloController@edit')->name('editprot')->middleware('auth');
+
+Route::post('/cadastroprot/{numeroprot}', 'ProtocoloController@update')->name('alterar_protocolo')->middleware('auth');
+
+Route::delete('/deleteprot/{numeroprot}',  'ProtocoloController@delete')->middleware('auth');
+
+Route::get('/lista', 'ProtocoloController@index')->name('protocolo')->middleware('auth');
+
+
+
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
 Route::get('/{error?}', 'LoginController@login')->name('login');
 
 Route::post('/', 'LoginController@autenticar')->name('login');
 
+Route::get('/logout', 'LoginController@logout');
 
 
 

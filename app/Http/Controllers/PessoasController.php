@@ -67,7 +67,8 @@ class PessoasController extends Controller
         
             $pessoa->save();
 
-            return redirect('/index');
+
+            return redirect('/index')->with('success','Pessoa cadastrada com sucesso!');
     }
 
     public function show ($id) 
@@ -103,7 +104,7 @@ class PessoasController extends Controller
       ]);
         
 
-        return redirect('/index');
+        return redirect('/index')->with('success','Pessoa editada com sucesso!');
       
         
     }
@@ -112,7 +113,7 @@ class PessoasController extends Controller
     {
         $pessoa = Pessoa::find($id);
         $pessoa->delete();
-        return redirect('/index');
+        return redirect('/index')->with('warning','Pessoa excluida com sucesso!');
     }
 
  

@@ -65,7 +65,7 @@ class ProtocoloController extends Controller
         
             $protocolo->save();
 
-            return redirect('/lista');
+            return redirect('/lista')->with('success','Protocolo cadastrado com sucesso!');;
     }
 
     public function show ($numeroprot) 
@@ -101,7 +101,7 @@ class ProtocoloController extends Controller
       ]);
         
 
-        return redirect('/lista');
+        return redirect('/lista')->with('success','Protocolo editado com sucesso!');
       
         
     }
@@ -110,7 +110,7 @@ class ProtocoloController extends Controller
     {
         $protocolo = protocolo::find($numeroprot);
         $protocolo->delete();
-        return redirect('/lista');
+        return redirect('/lista')->with('warning','Protocolo excluido com sucesso!');;
     }
 
 }

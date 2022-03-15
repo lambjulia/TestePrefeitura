@@ -25,6 +25,7 @@
                 <li><a href="{{url('cadastroprot')}}">Cadastrar novo Protocolo</a></li>
                 <li><a href="{{url('index')}}">Pessoas Cadastradas</a></li>
                 <li><a href="{{url('lista')}}">Protocolos Cadastrados</a></li>
+                <li><a href="{{ url('/logout') }}"> LogOut </a></li>
             </ul>
         </nav>
     </header>      

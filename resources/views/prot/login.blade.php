@@ -14,6 +14,7 @@
             <div class="col-12 col-md-8 col-lg-6 col-xl-5">
               <div class="card shadow-2-strong" style="border-radius: 1rem;">
                 <div class="card-body p-5 text-center">
+
                   @if ($errors->any())
                     <div class="alert alert-danger">
                       <ul>
@@ -23,6 +24,13 @@
                       </ul>
                     </div>
                     @endif
+
+                    @if ($message = Session::get('success'))
+<div class="alert alert-success alert-block">
+        <strong>{{ $message }}</strong>
+</div>
+@endif
+                  
 
                   @if(session('danger'))
                   <div class="alert alert-danger">
