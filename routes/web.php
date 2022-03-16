@@ -55,11 +55,13 @@ Route::get('/lista', 'ProtocoloController@index')->name('protocolo')->middleware
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
-Route::get('/{error?}', 'LoginController@login')->name('login');
+
+Route::get('/', 'LoginController@login')->name('login');
 
 Route::post('/', 'LoginController@autenticar')->name('login');
 
 Route::get('/logout', 'LoginController@logout');
+
 
 
 

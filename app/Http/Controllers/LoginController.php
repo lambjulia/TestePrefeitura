@@ -5,15 +5,21 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use Illuminate\Http\Response;
+
+
 
 class LoginController extends Controller
 {
     
-
+    
 
 public function cadastrar() {
 
+$user_id = Auth::user()->id;
 }
+
+
 
 public function login(Request $request){
     
@@ -59,14 +65,16 @@ protected function autenticar(Request $request) {
 
         return redirect()->route('home');
      }else {
-        $msg = array(
-            "msg" => "Login ou senha não são válidos"
-        ); 
-        return redirect()->back()->withErrors( $msg )->withInput();
+       
+        return redirect()->back()->with('danger','Usuário ou senha incorretos.');
     }
      }
     
- 
+     public function logout(Request $request) {
+        Auth::logout();
+        return redirect('/');
+    }
+   
 }
 
 
