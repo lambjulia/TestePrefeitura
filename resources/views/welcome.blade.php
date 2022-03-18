@@ -11,6 +11,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"
     integrity="sha256-Kg2zTcFO9LXOc7IwcBx1YeUBJmekycsnTsq2RuFHSZU=" crossorigin="anonymous"></script>
     
+  
+        </head>
+
     <title>Cadastrar Pessoa</title>
 </head>
 <body>
@@ -68,17 +71,19 @@
     <input type="text" name="complemento" id="complemento" style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless" placeholder="Complemento"><br>
     
     
-   
-
     
      
 
     <button type="submit" style="float:right"  class="btn btn-success">Enviar</button>
+
+ 
+
 </div>
 </form>   
 
 <script>
     $(document).ready(function(){
+
 
   $('#cpf').mask('000.000.000-00', {reverse: true});
 

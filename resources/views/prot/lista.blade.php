@@ -80,7 +80,7 @@
                     <form action="/deleteprot/{{ $protocolo->numeroprot }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="submit"  class="btn btn-danger" style="float: right"><i class='fa fa-trash'></i> Delete</a></button>
+                        <button type="submit"  class="btn btn-danger" style="float: right"  onclick="return confirm('Deseja mesmo deletar?');" ><i class='fa fa-trash'></i> Delete</a></button>
                     </form>
                 </td>
             </tr>

@@ -85,7 +85,7 @@
                 <form action="/delete/{{ $pessoa->id }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="submit"  class="btn btn-danger" ><i class='fa fa-trash'></i>Delete</a></button>
+                    <button type="submit"  class="btn btn-danger" onclick="return confirm('Deseja mesmo deletar?');" ><i class='fa fa-trash'></i>Delete</a></button>
                 </form>
             </td>
 

@@ -48,7 +48,7 @@
     
     <input type="text" name="prazo"  style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless"  value =" {{ $protocolo->prazo }}" placeholder="Prazo" required><br>
    
-    <input type="text" name="contribuinte"  style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless"  value="{{ $pessoa->nome }}" placeholder="Contribuinte" ><br>
+    <input type="text" name="contribuinte"  style="background-color: #d8d8d8ce" class="form-control form-control-lg form-control-borderless"  value="{{ $pessoa->nome }}" placeholder="Contribuinte"  required><br>
  
    
 
