@@ -22,13 +22,6 @@ class RegistroController extends Controller
         
         auth()->login($user);
 
-        $request->user()->fill([
-            'password' => Hash::make($request->Password)
-        ])->save();
-
-       
-        
-
             return redirect('/')->with('success','Login cadastrado com sucesso!');
     }
 }
